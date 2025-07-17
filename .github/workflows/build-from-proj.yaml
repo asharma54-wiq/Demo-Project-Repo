@@ -1,0 +1,22 @@
+name: Build Project with Platform
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      platform-version:
+        description: 'Platform version to use'
+        required: true
+        default: 'main'
+        type: string
+
+jobs:
+  build:
+    name: Build with Demo Platform
+    uses: asharma54-wiq/Demo-Platform-Repo/.github/workflows/check-gha-version.yaml@main
+    with:
+      platform-version: ${{ inputs.platform-version || 'v2.0' }}
+    secrets: inherit
