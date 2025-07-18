@@ -12,7 +12,7 @@ on:
 jobs:
   build:
     name: Build with Demo Platform
-    uses: asharma54-wiq/Demo-Platform-Repo/.github/workflows/checkout-calling-repo.yaml@main
+    uses: asharma54-wiq/Demo-Platform-Repo/.github/workflows/checkout-calling-repo.yaml@v1.0
     with:
-      platform-version: ${{ inputs.platform-version || 'v2.0' }}
+      platform-version: ${{ inputs.platform-version }}
     secrets: inherit
