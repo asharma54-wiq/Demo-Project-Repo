@@ -2,17 +2,9 @@ name: Build Project with Platform
 
 on:
   workflow_dispatch:
-    inputs:
-      platform-version:
-        description: 'Platform version to use'
-        required: true
-        default: 'main'
-        type: string
 
 jobs:
   build:
     name: Build with Demo Platform
-    uses: asharma54-wiq/Demo-Platform-Repo/.github/workflows/checkout-calling-repo.yaml@main
-    with:
-      platform-version: ${{ inputs.platform-version }}
+    uses: asharma54-wiq/Demo-Platform-Repo/.github/workflows/checkout-calling-repo.yaml@v1.0
     secrets: inherit
